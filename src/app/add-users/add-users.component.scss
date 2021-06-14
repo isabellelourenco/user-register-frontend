@@ -1,0 +1,102 @@
+.example-container {
+  position: relative;
+  padding: 5px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-full-width:nth-last-child(0) {
+  margin-bottom: 10px;
+}
+
+.addUser-backButton{
+  display: flex;
+}
+
+h2{
+  margin-top: 10px;
+  margin-left: 10px;
+  float:left;
+}
+
+.button-back{
+  margin-bottom: 10px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+.button-save-next{
+  display: flex;
+}
+
+.button-save{
+  
+}
+
+.mat-form-field-appearance-outline{
+  width: 99%;
+}
+
+.name, .last-name{
+  width: 50%;
+  display: flex;
+}
+
+.gender, .date-of-birth{
+  width: 50%;
+  display: flex;
+}
+
+.mat-form-field-appearance-legacy {
+  width: 100%;
+  padding-bottom: 1.25em;
+}
+
+.mat-flat-button {
+  margin: 5px;
+}
+
+.cep{
+  display: flex;
+  width: 40%;
+}
+
+.address{
+  display: flex;
+  width: 70%;
+}
+
+.cep-address{
+  display: flex;
+  width: 50%;
+}
+
+.bairro,.cidade{
+  display: flex;
+  width: 50%;
+}
+
+.bairro-cidade{
+  display: flex;
+  width: 50%;
+}
+
+.ddd,.number{
+  display: flex;
+  width: 50%;
+}
+
+.ddd-number{
+  display: flex;
+  width: 50%;
+}

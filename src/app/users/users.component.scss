@@ -1,0 +1,101 @@
+/* Structure */
+.example-container {
+  position: relative;
+  padding: 5px;
+}
+
+.example-container h2 {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.example-table-container {
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.input-group md-form form-sm form-1 pl-0 {
+  align-items: center;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+}
+
+.search-add {
+  display: flex;
+  width: 100%;
+}
+
+.search{
+  margin-top: 11px;
+  margin-left: 10px;
+ 
+}
+
+.mat-input-element{
+  width: 400px; //Largura do campo
+  height: 20px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 50%;
+  padding: 12px;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-rate-limit-reached {
+  color: #980000;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Column Widths */
+
+.mat-header-cell  {
+  text-align: centerzx;
+}
+
+
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+//Botão de Adicionar Aluno
+
+.mat-flat-button {
+  margin: 5px;
+  
+}
+
+.input-group-md-form-form-sm-form-1-pl-0{
+  justify-content: flex-end;
+}
+
+.opcoes{
+  justify-content: end;
+}
+
+

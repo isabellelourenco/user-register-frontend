@@ -31,6 +31,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -78,6 +79,9 @@
               "browserTarget": "user-register:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -99,7 +103,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           }

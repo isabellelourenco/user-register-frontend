@@ -1,0 +1,39 @@
+<div class="button-row">
+  <a mat-flat-button color="primary" [routerLink]="['/users']"><mat-icon>list</mat-icon></a>
+</div>
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2>{{users.name}} {{users.lastName}}</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <h3><b>Dados Pessoais</b></h3>
+        <dt><b>Gênero:</b> {{users.gender}}</dt>
+        <dt><b>Data de Nascimento:</b> {{users.dateOfBirth}} </dt>
+        <hr>
+        <h3><b>Endereço</b></h3>
+        <dt><b>CEP:</b> {{address.zipCode}}</dt>
+        <dt><b>Endereço:</b> {{address.address}}</dt>
+        <dt><b>Complemento:</b> {{address.complement}}</dt>
+        <dt><b>Bairro:</b> {{address.district}}</dt>
+        <dt><b>Cidade:</b> {{address.locale}}</dt>
+        <dt><b>UF:</b> {{address.uf}}</dt>
+        <dt><b>País:</b> {{address.country}}</dt>
+        <hr>
+        <h3><b>Telefone</b></h3>
+        <dt><b>DDD:</b> {{phone.ddd}}</dt>
+        <dt><b>Número:</b> {{phone.number}}</dt>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button color="primary" (click)="getReport(users.id)"><mat-icon>cloud_download</mat-icon> Gerar Relatório</a>
+      <a mat-flat-button color="primary" [routerLink]="['/edit-users', users.id]"><mat-icon>edit</mat-icon> Editar</a>
+      <a mat-flat-button color="warn" (click)="deleteUsers(users.id)"><mat-icon>delete</mat-icon> Deletar</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

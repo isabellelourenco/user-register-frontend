@@ -1,0 +1,158 @@
+<div class="button-back">
+  <a mat-flat-button color="primary" [routerLink]="['/users']"><mat-icon>keyboard_arrow_left</mat-icon></a>
+  </div>
+<div class="example-container mat-elevation-z8">
+  <div class="addUser-backButton">
+    <h2>Adicionar Usuário</h2>
+</div>
+  <mat-card class="example-card">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <!-- step 1 -->
+      <mat-step [stepControl]="usersForm">
+        <form [formGroup]="usersForm" (ngSubmit)="onUsersFormSubmit()">
+          <ng-template matStepLabel>Dados Pessoais</ng-template>
+              <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" placeholder="Nome" formControlName="name"
+                        [errorStateMatcher]="matcher">
+                <mat-error>
+                  <span *ngIf="usersForm.get('name')?.errors?.required">Digite um nome</span>
+                </mat-error>
+              </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput type="text" placeholder="Sobrenome" formControlName="lastName"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="usersForm.get('lastName')?.errors?.required">Digite seu sobrenome</span>
+            </mat-error>
+          </mat-form-field>
+          <div class=gender-dateOfBirth>
+            <div class="gender">
+              <mat-form-field appearance="outline">
+                <mat-label>Gênero</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option *ngFor="let gl of genderList" [value]="gl">
+                    {{gl}}
+                  </mat-option>
+                </mat-select>
+                <mat-error>
+                  <span *ngIf="usersForm.get('gender')?.errors?.required">Escolha um gênero</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="date-of-birth">
+              <mat-form-field > 
+                <mat-label>Data de Nascimento</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error>
+                      <span *ngIf="usersForm.get('dateOfBirth')?.errors?.required">Por favor selecione sua data de nascimento</span>
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          </div>
+          <div class="button-save-next">
+            <div>
+              <button mat-flat-button color="primary" matStepperNext>Próximo<mat-icon>keyboard_arrow_right</mat-icon></button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <!-- step 2 -->
+      <mat-step [stepControl]="addressForm">
+        <form [formGroup]="addressForm" (ngSubmit)="onAddressFormSubmit()">
+          <ng-template matStepLabel>Endereço</ng-template>
+            <mat-form-field appearance="outline">
+              <mat-label>CEP</mat-label>
+              <input matInput type="text" placeholder="CEP" formControlName="zipCode"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('zipCode')?.errors?.required">Digite um CEP</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Endereço</mat-label>
+              <input matInput type="text" placeholder="Endereço" formControlName="address"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('address')?.errors?.required">Digite um endereço</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Complemento</mat-label>
+              <input matInput type="text" placeholder="Complemento" formControlName="complement"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('complement')?.errors?.required">Digite um complemento</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Bairro</mat-label>
+              <input matInput type="text" placeholder="Bairro" formControlName="district"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('district')?.errors?.required">Digite um bairro</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Cidade</mat-label>
+              <input matInput type="text" placeholder="Cidade" formControlName="locale"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('locale')?.errors?.required">Digite uma cidade</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>UF</mat-label>
+              <input matInput type="text" placeholder="UF" formControlName="uf"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('uf')?.errors?.required">Digite uma UF</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>País</mat-label>
+              <input matInput type="text" placeholder="País" formControlName="country"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="addressForm.get('country')?.errors?.required">Digite um país</span>
+              </mat-error>
+            </mat-form-field>
+          <div>
+            <button mat-flat-button color="primary" matStepperPrevious><mat-icon>keyboard_arrow_left</mat-icon>Voltar</button>
+            <button mat-flat-button color="primary" matStepperNext>Próximo<mat-icon>keyboard_arrow_right</mat-icon></button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- step 3 -->
+      <mat-step [stepControl]="phoneForm">
+        <form [formGroup]="phoneForm" (ngSubmit)="onPhoneFormSubmit()">
+          <ng-template matStepLabel>Contato</ng-template>
+            <mat-form-field appearance="outline">
+              <mat-label>DDD</mat-label>
+              <input matInput type="text" placeholder="DDD" formControlName="ddd"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="phoneForm.get('ddd')?.errors?.required">Digite um DDD</span>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Número</mat-label>
+              <input matInput type="phone" placeholder="Número" formControlName="number"
+                      [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="phoneForm.get('number')?.errors?.required">Digite um número</span>
+              </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+              <button type="submit" mat-flat-button color="primary">Salvar</button>
+            </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+
