@@ -24,7 +24,6 @@
 h2{
   margin-top: 10px;
   margin-left: 10px;
-  float:left;
 }
 
 .button-back{
@@ -39,21 +38,17 @@ h2{
   display: flex;
 }
 
-.button-save{
-  
-}
-
 .mat-form-field-appearance-outline{
   width: 99%;
 }
 
-.name, .last-name{
-  width: 50%;
+.input1, .input2{
+  width: 100%;
   display: flex;
 }
 
-.gender, .date-of-birth{
-  width: 50%;
+.inputgrid{
+  width: 100%;
   display: flex;
 }
 

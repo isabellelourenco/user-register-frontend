@@ -1,8 +1,4 @@
 <div class="example-container mat-elevation-z8">
-  <div class="example-loading-shade"
-       *ngIf="isLoadingResults">
-    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-  </div>
   <div class="search-add">
     <div class="button-row">
       <a mat-flat-button color="primary" [routerLink]="['/add-users']"><mat-icon>add</mat-icon> Usuário</a>
@@ -10,7 +6,7 @@
     <div class="search">
       <div class="input-group md-form form-sm form-1 pl-0">
         <div class="input-group-prepend">
-          <span class="input-group-text purple lighten-3" id="basic-text1"><i icon="fas fa-search text-white"
+          <span class="input-group-text purple lighten-3" id="basic-text1"><i 
               aria-hidden="true"></i></span>
         </div>
         <input matInput (keyup)="applyFilter($event)"  class="form-control my-0 py-1" type="text" placeholder="Busca" aria-label="Search">
